@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package user_service;
+option go_package = "genproto/user_service";
+
+import "user.proto";
+
+service UserService {
+  rpc CreateOwner(Owner) returns (GetOwnerRequest);
+  rpc GetOwner(GetOwnerRequest) returns (Owner);
+  rpc UpdateOwner(Owner) returns (Owner);
+  rpc DeleteOwner(GetOwnerRequest) returns (DeletedOwner);
+  rpc ListOwner(GetAllOwnerRequest) returns (GetAllOwnerResponse);
+}
